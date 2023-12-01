@@ -10,7 +10,7 @@ const SecondPage = () => {
         <Sidebar />
     
       </div>
-      <div className={`  w-full transition-all duration-300 bg-secondary max-h-[85vh] overflow-y-auto ${open ? "ml-10 sm:ml-0  " : "ml-0 "}`}>
+      <div className={`  w-full transition-all duration-300 bg-secondary max-h-[85vh] overflow-y-auto ${open ? "ml-20 sm:ml-0  " : "ml-0 "}`}>
 
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5 mx-5">

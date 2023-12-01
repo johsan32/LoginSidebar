@@ -15,7 +15,7 @@ const AdminPage = () => {
       </div>
       <div
         className={`  w-full transition-all duration-300 bg-secondary max-h-[85vh] overflow-y-auto ${
-          open ? "ml-10 sm:ml-0  " : "ml-0 "
+          open ? "ml-20 sm:ml-0  " : "ml-0 "
         }`}
       >
         <div className="mt-5 mx-5 flex flex-wrap items-center justify-center gap-10">

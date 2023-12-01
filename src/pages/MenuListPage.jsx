@@ -10,7 +10,7 @@ const MenuListPage = () => {
         <Sidebar />
     
       </div>
-      <div className={`  w-full transition-all duration-300 bg-secondary max-h-[85vh] overflow-y-auto  ${open ? "ml-10 sm:ml-0  " : "ml-0 "}`}>
+      <div className={`  w-full transition-all duration-300 bg-secondary max-h-[85vh] overflow-y-auto  ${open ? "ml-20 sm:ml-0  " : "ml-0 "}`}>
         <div className="flex justify-center items-center h-full w-full mt-5">
 
         <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">

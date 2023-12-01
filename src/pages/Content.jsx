@@ -16,7 +16,7 @@ const Content = () => {
       </div>
       <div
         className={`  w-full transition-all duration-300 max-h-[85vh] overflow-y-auto bg-secondary  ${
-          open ? "ml-10 sm:ml-0  " : "ml-0 "
+          open ? "ml-20 sm:ml-0  " : "ml-0 "
         }`}
       >
 <div className="flex gap-5 flex-wrap mx-5 justify-center items-center mt-5">

@@ -139,9 +139,8 @@ const Sidebar = () => {
                               )}
                             </div>
                           </NavLink>
-                          
                         </div>
-                        
+
                         {catMenu.subMenus && showDropdown === catMenu.title && (
                           <>
                             <ul
@@ -151,7 +150,6 @@ const Sidebar = () => {
                                   : "left-20 top-0 sm:ml-10 ml-5 my-3 border-l-2"
                               }`}
                             >
-                                                 
                               {catMenu.subMenus.map((subMenu, subIndex) => (
                                 <li
                                   key={subIndex}
@@ -159,14 +157,12 @@ const Sidebar = () => {
                                     open ? "ml-[0px] mb-0" : "pl-[1px] mb-2"
                                   }`}
                                 >
-                             
                                   <div className="  flex items-center justify-between rounded-lg cursor-pointer px-2 py-1 hover:bg-primary">
                                     <Link
                                       // to={`/${subMenu.subMenuTitle}`}
-                                      to={
-                                        "https://berrydashboard.io/dashboard/default"
-                                      }
-                                      target="_blank"
+                                      // to={"https://berrydashboard.io/dashboard/default"}
+                                      to="/dashboard"
+                                      //target="_blank"
                                       className="w-full flex items-center justify-between gap-2 text-list"
                                       onClick={() =>
                                         handleClickSubMenu(subMenu.subMenuTitle)
@@ -213,7 +209,7 @@ const Sidebar = () => {
                                       </p>
                                     )}
                                   </div>
-              
+
                                   {subMenu?.subMenuList &&
                                     showSubMenuDropDown ===
                                       subMenu.subMenuTitle && (
@@ -232,7 +228,11 @@ const Sidebar = () => {
                                             >
                                               <Link
                                                 //to={`/${tabList.tabMenu}`}
-                                                to="/dashboard"
+                                                to={
+                                                  "https://berrydashboard.io/dashboard/default"
+                                                }
+                                                //to="/dashboard"
+                                                target="_blank"
                                                 className="flex items-center rounded-lg cursor-pointer px-2 py-1 hover:bg-primary text-list ml-3"
                                               >
                                                 <span className="w-2 h-2 mr-2 hover:bg-secondary ">
@@ -271,12 +271,14 @@ const Sidebar = () => {
                   </ul>
                 )}
               </div>
-             
             ))}
-             <img src="/src/assets/sidebarbottom.png" alt="dd" className={ `mb-5 ${open && "hidden"}`}/>
+            <img
+              src="/src/assets/sidebarbottom.png"
+              alt="dd"
+              className={`mb-5 ${open && "hidden"}`}
+            />
           </div>
         </div>
-        
       </div>
     </>
   );
