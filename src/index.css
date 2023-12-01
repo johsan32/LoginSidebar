@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+  background: #3d7bf1;
+  width: 6px;
+}
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+  background: #3d7bf1;
+  border-radius: 5px;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  background: #ede7f6;
+  width: 7px;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #3d7bf1;
+  border-radius: 5px;
+}
+.following-link {
+  text-decoration: #3d7bf1;
+}
+
+.effect {
+  transform: scale(1.05);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  background-color: #3d7bf1;
+  z-index: 9998;
+}
+
+.active {
+color: gray;
+  width: 100%;
+  border-radius: 10px;
+  background-color:  #ede7f6;
+  outline: none;
+}
+.active:hover{
+ background-color: transparent;
+ outline: none;
+ border: none;
+
+}
+.main-screen {
+  width: 100px !important;
+}
+/* .open-screen {
+  position: relative;
+} */
+
+.list-end li:last-child {
+  margin-bottom: 50px;
+}
+
+.modal-list{
+  position: relative;
+
+}
+.modal-content{
+  position: sticky;
+}
+.text-menu{
+  font-size: 18px;
+}
+.text-menu{
+  font-size: 18px;
+}
+.text-info{
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .overflow-y-auto::-webkit-scrollbar {
+    width: 2px;
+  }
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    width: 3px;
+  }
+  .text-menu{
+    font-size: 16px;
+  }
+  .text-list{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .overflow-y-auto::-webkit-scrollbar {
+    display: none;
+  }
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  /* .main-screen {
+    width: 80px !important;
+  } */
+  /* .body {
+    position: relative;
+  } */
+  /* .open-screen {
+    position: absolute;
+    top: 50;
+    width:200px;
+    border-radius: 10px;
+
+  } */
+  .text-menu{
+    font-size: 14px;
+  }
+  .text-list{
+    font-size: 12px;
+  }
+  .text-info{
+    font-size: 10px;
+  }
+  .modal-list{
+    position: absolute;
+    
+  }
+  .modal-content{
+    position: relative;
+  }
+}
