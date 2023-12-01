@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { MenuContext } from "../../context/MenuContext";
 import { Link, NavLink } from "react-router-dom";
-import FirstList from "./FirstList";
 
 const Sidebar = () => {
   const {
     Menus,
     open,
-    setOpen,
     showDropdown,
     setShowDropdown,
     showSubMenuDropDown,
@@ -20,7 +18,6 @@ const Sidebar = () => {
     if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
       setShowDropdown("");
       setShowSubMenuDropDown("");
-      //setOpen(!open);
     }
   };
 
@@ -34,7 +31,6 @@ const Sidebar = () => {
   const handleClickMenu = (menuTitle) => {
     console.log(menuTitle);
     setShowDropdown(menuTitle === showDropdown ? "" : menuTitle);
-    //setOpen(true);
   };
 
   const handleClickSubMenu = (menuSubTitle) => {
@@ -61,8 +57,8 @@ const Sidebar = () => {
               >
                 <p
                   className={` text-darkText font-bold text-menu cursor-default mt-3 mb-2 ${
-                    open ? "hidden" : "" &&
-                  category.disabled && "text-red-500" }`}
+                    open ? "hidden" : "" && category.disabled && "text-red-500"
+                  }`}
                 >
                   {category.name}
                   {/* menü alt bilgisi varsa ekrana bas */}
@@ -70,8 +66,14 @@ const Sidebar = () => {
                     {category?.info}
                   </span>
                 </p>
-                
-                { category.icon &&  <img src="/src/assets/sidebarbottom.png" alt=""  className={` ${open ? "hidden " : "mb-5"}`}/>}
+
+                {category.icon && (
+                  <img
+                    src="/src/assets/sidebarbottom.png"
+                    alt=""
+                    className={` ${open ? "hidden " : "mb-5"}`}
+                  />
+                )}
 
                 {/* kategorilere göre menüleri oluşturma */}
                 {category.menu && (
@@ -84,7 +86,6 @@ const Sidebar = () => {
                             open ? "justify-center  " : " justify-between"
                           }`}
                         >
-                          {/* {!open&& <button onClick={() => handleClickMenu(catMenu.title)}></button> }  */}
                           <NavLink
                             to={
                               catMenu.path ? `/${catMenu.path}` : "/dashboard"
@@ -92,7 +93,11 @@ const Sidebar = () => {
                             activeClassName="active"
                           >
                             <div
-                              className={` flex items-center gap-5 rounded-lg py-2 "${catMenu.disabled ? "text-gray-500 cursor-not-allowed bg-gray-300" : ""}  ${
+                              className={` flex items-center gap-5 rounded-lg py-2 "${
+                                catMenu.disabled
+                                  ? "text-gray-500 cursor-not-allowed bg-gray-300"
+                                  : ""
+                              }  ${
                                 !open
                                   ? "justify-between "
                                   : " justify-between  "
@@ -106,22 +111,21 @@ const Sidebar = () => {
                                   src={`./src/assets/${catMenu.icon}`}
                                   alt=""
                                 />
-
+                                <div></div>
                                 <p
-                                  className={` text-darkText  text-menu  ${catMenu.disabled ? "" : ""}   ${
-                                    open ? "hidden" : ""
-                                  }`}
+                                  className={` text-darkText  text-menu ${
+                                    catMenu.disabled ? "" : ""
+                                  }   ${open ? "hidden" : ""}`}
                                 >
                                   {catMenu.title}{" "}
+                                  {catMenu?.mark && (
+                                    <span className="bg-primary text-white rounded-full text-info px-2">
+                                      {catMenu?.mark} {catMenu?.marked}{" "}
+                                    </span>
+                                  )}
                                   <p className="text-info text-primary font-thin ">
                                     {catMenu?.info}
                                   </p>
-                                  {catMenu?.mark && (
-                                    <p className="bg-primary text-white rounded-full px-2 self-center text-end">
-                                      {catMenu?.mark} {catMenu?.marked}{" "}
-                                    </p>
-                                  )}
-                                  { catMenu?.disabled && <p className={`text-red-500 ${open ? "hidden " : "mb-5"}`}>{catMenu.name} </p>}
                                 </p>
                               </div>
                               {!open && catMenu.subMenus && (
@@ -135,8 +139,9 @@ const Sidebar = () => {
                               )}
                             </div>
                           </NavLink>
+                          
                         </div>
-
+                        
                         {catMenu.subMenus && showDropdown === catMenu.title && (
                           <>
                             <ul
@@ -146,6 +151,7 @@ const Sidebar = () => {
                                   : "left-20 top-0 sm:ml-10 ml-5 my-3 border-l-2"
                               }`}
                             >
+                                                 
                               {catMenu.subMenus.map((subMenu, subIndex) => (
                                 <li
                                   key={subIndex}
@@ -153,17 +159,14 @@ const Sidebar = () => {
                                     open ? "ml-[0px] mb-0" : "pl-[1px] mb-2"
                                   }`}
                                 >
-                                  {/* {open && (
-                                    <div className=" sm:absolute text-list sm:block hidden">
-                                      {subMenu.subMenuTitle}
-                                    </div>
-                                  )} */}
-
+                             
                                   <div className="  flex items-center justify-between rounded-lg cursor-pointer px-2 py-1 hover:bg-primary">
                                     <Link
                                       // to={`/${subMenu.subMenuTitle}`}
-                                      //to={"/listChild"}
-                                      to="/dashboard"
+                                      to={
+                                        "https://berrydashboard.io/dashboard/default"
+                                      }
+                                      target="_blank"
                                       className="w-full flex items-center justify-between gap-2 text-list"
                                       onClick={() =>
                                         handleClickSubMenu(subMenu.subMenuTitle)
@@ -210,6 +213,7 @@ const Sidebar = () => {
                                       </p>
                                     )}
                                   </div>
+              
                                   {subMenu?.subMenuList &&
                                     showSubMenuDropDown ===
                                       subMenu.subMenuTitle && (
@@ -267,9 +271,12 @@ const Sidebar = () => {
                   </ul>
                 )}
               </div>
+             
             ))}
+             <img src="/src/assets/sidebarbottom.png" alt="dd" className={ `mb-5 ${open && "hidden"}`}/>
           </div>
         </div>
+        
       </div>
     </>
   );

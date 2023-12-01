@@ -66,9 +66,7 @@ color: gray;
 .main-screen {
   width: 100px !important;
 }
-/* .open-screen {
-  position: relative;
-} */
+
 
 .list-end li:last-child {
   margin-bottom: 50px;
@@ -112,19 +110,6 @@ color: gray;
   .overflow-y-auto::-webkit-scrollbar-thumb {
     display: none;
   }
-  /* .main-screen {
-    width: 80px !important;
-  } */
-  /* .body {
-    position: relative;
-  } */
-  /* .open-screen {
-    position: absolute;
-    top: 50;
-    width:200px;
-    border-radius: 10px;
-
-  } */
   .text-menu{
     font-size: 14px;
   }
