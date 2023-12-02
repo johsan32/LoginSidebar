@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/dashboard" element={<Content />} />
           <Route path="/" element={<Content />} />
+          <Route path="/dashboard" element={<Content />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/second" element={<SecondPage />} />
           <Route path="/listChild" element={<MenuListPage />} />
