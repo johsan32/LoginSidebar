@@ -69,7 +69,7 @@ const Sidebar = () => {
 
                 {category.icon && (
                   <img
-                    src=".public/sidebarbottom.png"
+                    src="./sidebarbottom.png"
                     alt=""
                     className={` ${open ? "hidden " : "mb-5"}`}
                   />
@@ -108,7 +108,7 @@ const Sidebar = () => {
                                   className={`w-6 h-6 sm:w-8 sm:h-8 self-center sm:p-1 p-0 ${
                                     open ? "ml-0" : "ml-3"
                                   }`}
-                                  src={`./public/${catMenu.icon}`}
+                                  src={`./${catMenu.icon}`}
                                   alt=""
                                 />
                                 <div></div>
@@ -131,9 +131,9 @@ const Sidebar = () => {
                               {!open && catMenu.subMenus && (
                                 <p className=" text-right mr-4">
                                   {showDropdown == catMenu.title ? (
-                                    <img src="./public/up.svg" alt="" />
+                                    <img src="./up.svg" alt="" />
                                   ) : (
-                                    <img src="./public/down.svg" alt="" />
+                                    <img src="./down.svg" alt="" />
                                   )}
                                 </p>
                               )}
@@ -197,12 +197,12 @@ const Sidebar = () => {
                                         {showSubMenuDropDown ===
                                         subMenu.subMenuTitle ? (
                                           <img
-                                            src="./public/up.svg"
+                                            src="./up.svg"
                                             alt=""
                                           />
                                         ) : (
                                           <img
-                                            src="./public/down.svg"
+                                            src="./down.svg"
                                             alt=""
                                           />
                                         )}
@@ -273,7 +273,7 @@ const Sidebar = () => {
               </div>
             ))}
             <img
-              src="/public/sidebarbottom.png"
+              src="/sidebarbottom.png"
               alt="dd"
               className={`mb-5 ${open && "hidden"}`}
             />
