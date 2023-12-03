@@ -10,7 +10,7 @@ function Header() {
         <div className="flex items-center justify-between h-full ">
           <div className="flex items-center justify-between w-1/4">
             <a className="hidden md:block cursor-pointer " href='/'>
-              <img src="/src/assets/logo.svg" alt=""  />
+              <img src="./logo.svg" alt=""  />
             </a>
             <span
               className={` cursor-pointer -right-3 top-9 px-3 py-2 border-dark-purple bg-secondary hover:bg-primary
